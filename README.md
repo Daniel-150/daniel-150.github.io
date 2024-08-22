@@ -1,0 +1,10 @@
+SELECT * FROM modelo;
+SELECT mo.nombre AS Modelo,ma.nombre AS Marca FROM modelo AS mo INNER JOIN marca AS ma ON mo.idmarca = ma.idmarca;
+SELECT mo.nombre AS Modelo, ma.nombre AS Marca FROM modelo AS mo INNER JOIN marca AS ma ON mo.idmarca = ma.idmarca ORDER BY Marca DESC;
+SELECT mo.nombre AS Modelo, ma.nombre AS Marca FROM modelo AS mo INNER JOIN marca AS ma ON mo.idmarca = ma.idmarca WHERE ma.nombre = "Xiaomi" ORDER BY Marca DESC ;
+SELECT * FROM celular;
+SELECT * FROM sistemaoperativo;
+SELECT cel.*, sis.nombre FROM celular AS cel INNER JOIN sistemaoperativo AS sis ON cel.idsistemaop = sis.idsistemaop;
+SELECT cel.nombre, cel.precio, co.nombre AS compania, ma.nombre AS marca, mo.nombre AS modelo, sis AS sistemaoperativo FROM celular AS cel INNER JOIN compania co ON cel.idcompania(link unavailable) INNER JOIN marca ma ON cel.idmarca = (LINK unavailable) INNER JOIN modelo mo ON cel.idmodelo=(LINK unavailable) INNER JOIN sistemaoperativo so ON cel.idsistemaoperativo= (LINK unavailable);
+SELECT c.memoria, c.precio, si.nombre, co.nombre, mo.nombre, ma.nombre FROM celular AS c INNER JOIN compania as co ON c.idcompania = co.idcompania INNER JOIN sistemaoperativo AS si ON c.idsistemaop = si.idsistemaop INNER JOIN modelo AS mo ON c.idmodelo = mo.idmodelo INNER JOIN marca AS ma ON mo.idmarca = ma.idmarca;
+SELECT c.memoria, c.precio, si.nombre, co.nombre, mo.nombre, ma.nombre, c.precio * 1.20 AS precio_aumentado FROM celular AS c INNER JOIN compania as co ON c.idcompania = co.idcompania INNER JOIN sistemaoperativo AS si ON c.idsistemaop = si.idsistemaop INNER JOIN modelo AS mo ON c.idmodelo = mo.idmodelo INNER JOIN marca AS ma ON mo.idmarca = ma.idmarca ;
